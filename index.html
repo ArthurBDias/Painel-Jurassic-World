@@ -6,36 +6,92 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/5e244b7f78.js" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
 
 
     <header>
         <div class="navbar">
-            <a href="https://www.universalpictures.com" target="_blank"> <img src="Midia/Universal-Picture-Logo .png" alt="Logo Universal Pictures" ></a>
+            <a href="https://www.universalpictures.com" target="_blank" class="universal-picture-link"> <img src="Midia/Universal-Picture-Logo .png" alt="Logo Universal Pictures" ></a>
 
-        <nav>
-            <ul>
-                <li>
-                    <a href="">Home</a>
-                </li>
+            <nav>
+                <ul>
+                    <li class="toogle-menu-box" id="toogle-menu-box">
+                        <div class="toogle-menu-content">
+                            <ul>
+                                <div class="links">
+                                    <li>
+                                        <a href="./">Home</a>
+                                    </li>
+                
+                                    <li>
+                                        <a href="">Characters</a>
+                                    </li>
+                
+                                    <li>
+                                        <a href="">Get Tickets</a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="">Galery</a>
+                                    </li>
+                                </div>
 
-                <li>
-                    <a href="">Characters</a>
-                </li>
+                                <div class="icons">
+                                    <li>
+                                        <a href="">
+                                            <i class="fa-brands fa-youtube"></i>
+                                        </a>
+                                    </li>
+                    
+                                    <li>
+                                        <a href="">
+                                            <i class="fa-brands fa-twitter"></i>
+                                        </a>
+                                    </li>
+                    
+                                    <li>
+                                        <a href="">
+                                            <i class="fa-brands fa-instagram"></i>
+                                        </a>
+                                    </li>
+                    
+                                    <li>
+                                        <a href="">
+                                            <i class="fa-brands fa-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                </div>
+            
+                            </ul>
 
-                <li>
-                    <a href="">Get Tickets</a>
-                </li>
+    
+                        </div>
 
-                <li>
-                    <a href="">Galery</a>
-                </li>
-            </ul>
-        </nav>
+                        <div class="toogle-menu"></div>
+                    </li>
 
-    </div>
+                    <li>
+                        <a href="">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="">Characters</a>
+                    </li>
+
+                    <li>
+                        <a href="">Get Tickets</a>
+                    </li>
+                    
+                    <li>
+                        <a href="">Galery</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+        </div>
 
     </header>
 
@@ -49,12 +105,11 @@
                 Dominion takes place four years after Isla Nublar has been destroyed. Dinosaurs now live and hunt alongside humans all over the world. This fragile balance will reshape the future and determine, once and for all, whether human beings are to remain the apex predators on a planet they now share with history's most fearsome creatures.
             </p>
 
-            <button>Watch Trailer</button>
+            <button id="trailer-btn">Watch Trailer</button>
         </div>
 
         <div class="social-midia">
             <ul>
-
                 <li>
                     <a href="">
                         <i class="fa-brands fa-youtube"></i>
@@ -86,5 +141,83 @@
     <footer>
         <p>Direitos de imagem de Universal Pictures&copy; </p>
     </footer>
+
+
+
+
+
+    <div class="trailer-video" id="trailer-video">
+
+        <video video id="video-tier3" autoplay preload="none" poster="Midia/poster-trailer.jpg" controls id="video-trailer">
+            <source  src="Midia/Jurassic World Dominion - Official Trailer.mp4" type="video/mp4" >
+        </video>
+
+            <button class="close-trailer-video" id="close-trailer-video">X</button>
+      
+    </div>
+
+    <div class="characters-background">
+
+        <div class="characters-container">
+
+            <div class="character-line">
+
+                <div class="character-box">
+                  
+                </div>
+
+                <div class="character-box">
+                  
+                </div>
+
+                <div class="character-box">
+                  
+                </div>
+                
+            </div>
+
+        </div>
+
+        <div class="characters-container">
+
+            <div class="character-line">
+
+                <div class="character-box">
+                  
+                </div>
+
+                <div class="character-box">
+                  
+                </div>
+
+                <div class="character-box">
+                  
+                </div>
+                
+            </div>
+
+        </div>
+
+        <div class="characters-container">
+
+            <div class="character-line">
+
+                <div class="character-box">
+                  
+                </div>
+
+                <div class="character-box">
+                  
+                </div>
+
+                <div class="character-box">
+                  
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
 </body>
 </html>

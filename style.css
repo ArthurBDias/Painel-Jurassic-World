@@ -16,8 +16,16 @@ ul{
     list-style: none;
 }
 
+html{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden !important;
+}
+
 body{
     height: 100vh;
+    width: 100vw;
+    overflow: hidden !important;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.80) 30%, rgba(0, 0, 0, 0.60) 50%, rgba(0, 0, 0, 0.20)), 
     url(Midia/background.jpg);
     background-size: cover;
@@ -26,10 +34,24 @@ body{
     padding: 5vh 5vw;
     display: flex;
     flex-direction: column;
+    animation: zoomefect 1s;
+}
+
+@keyframes zoomefect{
+    0%{
+        transform: scale(3);
+    } 
+    100%{
+        transform: scale(1);
+    }
 }
 
 
 /*header*/
+
+body header{
+    max-width: 90vw;
+}
 
 
 body header .navbar{
@@ -38,9 +60,15 @@ body header .navbar{
     align-items: center;
 }
 
+body header .navbar .universal-picture-link{
+    z-index: 10;
+}
+
+
 body header .navbar img{
     width: 180px;
     max-width: 20vh;
+    z-index: 10;
 }
 
 body header .navbar nav ul{
@@ -52,6 +80,12 @@ body header .navbar nav ul{
 body header .navbar nav ul li{
     padding: 6px 10px;
     transition: all .7s;
+    z-index: 10;
+
+}
+
+body header .navbar nav ul li.toogle-menu-box{
+    display: none;
 }
 
 body header .navbar nav ul li:hover{
@@ -74,6 +108,7 @@ body main{
 
 body main .text-content{
     flex-grow: 1;
+    max-width: 88vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -114,6 +149,7 @@ body main .text-content button{
     font-weight: bold;
     transform: translateY(40px);
     transition: all .6s;
+    cursor: pointer;
 }
 
 body main .text-content button:hover{
@@ -171,6 +207,47 @@ body footer p{
     font-size: 1rem;
 }
 
+div.trailer-video.active{
+    top: 0vh;
+}
+
+.trailer-video{
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 100vh;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    transition: all 1s;
+}
+
+.trailer-video video{
+    width: 80%;
+}
+
+.trailer-video .close-trailer-video{
+    position: absolute;
+    top: 3vh;
+    right: 3vw;
+    font-size: 2.5rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid white;
+    outline: none;
+    transition: all .4s;
+}
+
+.trailer-video .close-trailer-video:hover{
+    background-color: var(--ambar);
+}
 
 
 /*Breakpoint
@@ -283,3 +360,164 @@ phone:480px
     }
 
 }
+
+@media(max-width: 767px){
+    body{
+        padding: 20px 20px; 
+    }
+    /*header*/
+    body header .navbar img{
+        width: 180px;
+        max-width: 14vh;
+    }
+
+    body header .navbar nav li{
+        display: none;
+    }
+
+    body header .navbar nav li.toogle-menu-box{
+        display: flex !important;
+        flex-direction: column;
+        width: 20px;
+        height: 14px;
+        padding: 10px;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        z-index: 100;
+
+    }
+
+    body header .navbar nav li.toogle-menu-box:hover{
+        background-color: unset !important;
+    }
+
+    body header .navbar nav li div.toogle-menu::before{
+        content: "";
+        display: block;
+        width: 19px;
+        height: 2px;
+        background-color: white;
+        transform: translateY(-10px);
+      
+
+    }
+
+    body header .navbar nav li div.toogle-menu{
+        display: block;
+        width: 19px;
+        height: 2px;
+        background-color: white;
+        transition: all 0.4s;
+    }
+
+    body header .navbar nav li div.toogle-menu::after{
+        content: "";
+        display: block;
+        width: 19px;
+        height: 2px;
+        background-color: white;
+        margin-top: 7px;
+    }
+
+
+    body header .navbar nav li.toogle-menu-box.active .toogle-menu::before{
+    transform: rotate(90deg);
+    }
+
+    body header .navbar nav li.toogle-menu-box.active .toogle-menu{
+        transform: rotate(-45deg);
+    }
+
+    body header .navbar nav li.toogle-menu-box.active .toogle-menu::after{
+        display: none;
+    }
+
+    body header .navbar nav li.toogle-menu-box .toogle-menu-content{
+        position: absolute;
+        top: -30px;
+        right: -60vw;
+        background-color: rgba(0, 0, 0, 0.6);
+        height: 100vh;
+        width: 50vw;
+        transition: all 1s;
+    }
+
+    body header .navbar nav li.toogle-menu-box.active .toogle-menu-content{
+        right: -30px;
+    }
+
+    body header .navbar nav li.toogle-menu-box .toogle-menu-content ul{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    body header .navbar nav li.toogle-menu-box .toogle-menu-content ul li{
+        display: block;
+    }
+
+    body header .navbar nav li.toogle-menu-box .toogle-menu-content ul div.icons{
+        display: flex;
+        gap: 20px;
+    }
+
+    body header .navbar nav li.toogle-menu-box .toogle-menu-content ul div.icons li{
+     width: 40px;
+     height: 40px;
+     border-radius: 50%;
+     border: 2px solid white;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 0;
+    }
+
+    body header .navbar nav li.toogle-menu-box .toogle-menu-content ul div.icons li i{
+        font-size: 1.2rem;
+    }
+
+    body header .navbar nav li.toogle-menu-box .toogle-menu-content ul div.icons li:hover{
+        background-color: unset !important;
+    }
+
+
+
+    /*main*/
+    body main .text-content h1{
+        font-size: 3.8rem;
+    }
+
+    body main .text-content h1 span{
+        font-size: 1.4rem;
+    }
+    
+    body main .text-content h2{
+        font-size: 0.95rem;
+    }
+    
+    body main .text-content p{
+        font-size: 0.7rem;
+        width: 300px;
+    }
+
+    body main .text-content button{
+        width: 160px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+
+    body main .social-midia{
+        display: none;
+    }
+
+    body footer p{
+        text-align: center;
+        font-size: 0.7rem;
+    }
+
+}
+
+
