@@ -1,6 +1,12 @@
-
+//start toogle menu
 var toogleMenuBtn = document.querySelector("#toogle-menu-box")
 
+let icons = document.querySelector("#icons")
+let iconsContainer = document.querySelector("#icons-container")
+
+console.log(icons, iconsContainer)
+
+iconsContainer.appendChild(icons)
 
 toogleMenuBtn.addEventListener('click', () =>{
 
@@ -8,6 +14,10 @@ toogleMenuBtn.addEventListener('click', () =>{
     toogleMenuBtn.classList.toggle("active")
 })
 
+//end toogle menu
+
+
+//start trailer video
 
 const trailer = document.querySelector("#trailer-video")
 const videoTrailer = document.querySelector("#video-trailer")
@@ -23,6 +33,10 @@ const BtnCloseTrailer = document.querySelector("#close-trailer-video").addEventL
     
 })
 
+//end trailer video
+
+
+//start characters slide
 
 const characters = [
     
@@ -108,3 +122,6 @@ var charactersBox = document.querySelectorAll('.character-box')
         charactersBox
 
     }
+
+
+//end characters slide
