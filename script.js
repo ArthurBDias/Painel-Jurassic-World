@@ -10,10 +10,11 @@ toogleMenuBtn.addEventListener('click', () =>{
 
 
 const trailer = document.querySelector("#trailer-video")
-const videoTrailer = document.querySelector("video-trailer")
+const videoTrailer = document.querySelector("#video-trailer")
 
 var trailerBtn = document.querySelector("#trailer-btn").addEventListener('click', () =>{
     trailer.classList.add("active")
+    videoTrailer.click()
 })
 
 const BtnCloseTrailer = document.querySelector("#close-trailer-video").addEventListener("click", ()=>{
