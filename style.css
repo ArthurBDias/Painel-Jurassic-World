@@ -211,10 +211,10 @@ div.trailer-video.active{
     top: 0vh;
     z-index: 100;
     opacity: 1;
-    animation: ViodeoTansition 1s;
+    animation: OpenTansition 1s;
 }
 
-@keyframes ViodeoTansition {
+@keyframes OpenTansition {
     0%{
         top: -100vh;
     }
@@ -265,7 +265,10 @@ div.trailer-video.active{
 /*characters*/
 
 .characters-background.active{
-    display: flex;
+    top: 0vh;   
+    z-index: 100;
+    opacity: 1;
+animation: OpenTansition 1s;
 }
 
 .characters-background{
@@ -275,9 +278,12 @@ div.trailer-video.active{
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
+    z-index: -100;
+    opacity: 0;
+    transition: all 1s;
 }
 
 .characters-background .close-slides{
@@ -360,7 +366,72 @@ div.characters-container{
 width: 90%;
 }
 
+/* Galery */
+div.background-galery{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -100;
+    opacity: 0;
+    transition: all 1s;
+}
 
+div.background-galery.active{
+    top: 0vh;
+    z-index: 100;
+    opacity: 1;
+    animation: OpenTansition 1s;
+}
+
+
+div.background-galery div.galery-slider-container{
+    width: 80vw;
+    height: 40vw;
+    overflow: hidden;
+    position: relative;
+}
+
+div.background-galery div.galery-slider-container .action-btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 5vw;
+    cursor: pointer;
+}
+
+div.background-galery div.galery-slider-container .btn-prev{
+   left: 0;
+}
+
+div.background-galery div.galery-slider-container .btn-next{
+    right: 0;
+ }
+
+div.background-galery div.galery-slider-container div.galery-slider{
+    display: flex;
+    width: 400%;
+}
+
+div.background-galery div.galery-slider-container div.galery-slide:first-child{
+     margin-left: -25%;
+}
+
+div.background-galery div.galery-slider-container div.galery-slide{
+    width: 80vw;
+    height: 40vw;
+    transition: all 0.6s;
+}
+
+div.background-galery div.galery-slider-container div.galery-slide img{
+    width: 100%;
+    height: 100%;
+}
 
 
 /*Breakpoint
@@ -809,94 +880,4 @@ phone:480px
         font-size: 0.4rem;
     }
 }
-
-
-
-/*
-
-* {
-  padding: 0;
-  margin: 0;
-}
-
-.content-slider {
-  margin: 0 auto;
-  max-width: 80vw;
-  min-width: 300px;
-  height: 400px;
-  position: absolute;
-  overflow: hidden;
-}
-
-.slider {
-  width: 300%;
-  height: 100%;
-  display: flex;  
-}
-
-.barra-slide {
-  width: 33.33%;
-  height: 100%;
-  display: flex;
-  background-color: translate;
-  transition: all .8s;
-}
-
-.barra-slide:first-child{
-    margin-left: -33.33%;
-}
-
-.slide {
-  width: 33.33%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.6s;
-}
-
-.slide img {
-  width: 90%;
-  height: 90%;
-}
-
-.actionbtn {
-  position: absolute;
-  top: 0%;
-  height: 100%;
-  width: 30px;
-  background-color: rgba(0, 0, 0, 0.405);
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.contain-slide .actionbutton:hover {
-  background-color: rgba(0, 0, 0, 0.805);
-}
-
-.actionbtn span {
-  font: bold 32px Arial;
-  color: white;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%);
-}
-
-#prev {
-  left: 0;
-}
-
-#prev span {
-  left: 10px;
-}
-
-#next {
-  right: 0px;
-}
-
-#next span {
-  right: -10px;
-}
-
-
-*/
+/*Criar um botãp p fechar galeriae criar função de fechas as janelas quando abrir uma nova

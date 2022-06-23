@@ -120,20 +120,19 @@ var charactersBox = document.querySelectorAll('.character-slide')
     let chatactersBar = document.querySelectorAll('.chatacters-bar')
 
 
-    const btnPrev = document.querySelector('#btn-prev').addEventListener('click', () =>{
-        const lastslide = chatactersBar[chatactersBar.length - 1]
-        console.log(lastslide)
-        charactersContainer.insertBefore(chatactersBar[2], chatactersBar[0])
+    const btnPrevCharacters = document.querySelector('#btn-prev').addEventListener('click', () =>{
         chatactersBar = document.querySelectorAll('.chatacters-bar')
+        let lastslide = chatactersBar[chatactersBar.length - 1]
+        charactersContainer.insertBefore(lastslide, chatactersBar[0])
     })
 
 
-
-
-    const btnNext = document.querySelector('#btn-next').addEventListener('click', () =>{
+    const btnNextCharacters = document.querySelector('#btn-next').addEventListener('click', () =>{
         chatactersBar = document.querySelectorAll('.chatacters-bar')
         charactersContainer.appendChild(chatactersBar[0])
     })
+
+
 
     let charactersBtn = document.querySelectorAll('.characters-btn')
 
@@ -152,3 +151,33 @@ var charactersBox = document.querySelectorAll('.character-slide')
     })
     console.log(charactersBtn)
 //end characters slide
+
+
+// galery
+
+    const btnGalery = document.querySelectorAll('.galery-btn')
+    const Galery = document.querySelector('#background-galery')
+    
+    btnGalery.forEach((item) => {
+        item.addEventListener('click', () =>{
+            Galery.classList.toggle('active')
+        })
+    })
+
+
+const GalerySlider = document.querySelector('#galery-slider')
+let SlidesofGalery = document.querySelectorAll('.galery-slide')
+
+
+    btnNextGalery = document.querySelector('#btn-next-galery').addEventListener('click', () => {
+        SlidesofGalery = document.querySelectorAll('.galery-slide')   
+        GalerySlider.appendChild(SlidesofGalery[0])
+    })
+
+    btnPrevGalery = document.querySelector('#btn-prev-galery').addEventListener('click', () => {
+        SlidesofGalery = document.querySelectorAll('.galery-slide')   
+        let lastSlide = SlidesofGalery[SlidesofGalery.length -1]
+        GalerySlider.insertBefore(lastSlide, SlidesofGalery[0])
+    })
+
+
